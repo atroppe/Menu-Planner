@@ -1,0 +1,342 @@
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all .6s ease;
+}
+/**--------- GRIDS ------------**/
+
+.grid {
+    font-size: 0px;
+    text-align: justify;
+}
+.grid:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+.cell {
+    display: inline-block;
+    text-align: left;
+    vertical-align: top;
+    font-size: 16px;
+    font-size: 1rem;
+}
+/**--------- GRIDS ------------**/
+
+/*-----------------------background---------------------*/
+
+#bkdImg {
+/*    background-size: cover;*/
+    width: 100%;
+/*    height: 100vh;*/
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 100% auto;
+    background-attachment: fixed;
+}
+
+.chalkboard {
+    background-image: url(http://cl.ly/image/213N0k0e330D/chalkboard_drawings.gif);
+}
+.goldFabric {
+    background-image: url(http://cl.ly/image/3x2D413Y0m1W/gold-fabric-texture.jpg);
+}
+/*------------------Monster Nav!!!-------------*/
+
+.triangleNav {
+    min-height: 200px;
+    min-width: 580px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: center;
+    -webkit-transform: translate(-40%, -40%) rotate(-45deg);
+    font-family: sans-serif;
+    color: black;
+}
+#home {
+    background-color: white;
+    padding-top: 12rem;
+    padding-bottom: 5px;
+}
+#foodCat {
+    background-color: hsla(360, 100%, 100%, .75);
+    padding: 5px;
+}
+#event {
+    background-color: hsla(360, 100%, 100%, .5);
+    padding: 5px;
+}
+#home, #foodCat, #event {
+    font-size: 1.5rem;
+    /*  padding: 1rem;*/
+    text-transform: uppercase;
+}
+.tabBar {
+    background-color: white;
+    height: 10px;
+}
+.tab {
+    border: 2px solid white;
+    width: 20%;
+    text-align: center;
+    background-color: hsla(360, 100%, 100%, .5);
+    font-size: 1rem;
+    padding: 3px;
+    box-shadow: 5px 10px 15px black;
+}
+/*----------------top bar/header---------------*/
+
+.topBar {
+    font-family: sans-serif;
+}
+header {
+    background-color: hsla(360, 100%, 100%, .5);
+    height: 70px;
+    width: 100%;
+    padding-left: 35%;
+    padding-right: 2%;
+}
+.title {
+    max-width: 70%;
+    height: 100%;
+}
+.title h2 {
+    color: black;
+    text-align: center;
+    font-size: 2rem;
+    padding: .5rem;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+}
+.buttonBox {
+    background-color: white;
+    height: 100%;
+    width: 30%;
+    text-align: center;
+}
+.Button {
+    background-color: black;
+    width: 40%;
+    height: 70px;
+    border-radius: 20px;
+    padding: .5rem;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+}
+.Button h3 {
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 100;
+    text-transform: uppercase;
+    position: relative;
+    top: 30%;
+}
+/*---------------page content----------------*/
+
+#pageContent {
+    width: 100%;
+    padding: 4% 4% 6% 25%;
+}
+/*----------------final Menu Page------------------*/
+
+/*.finalMenuPage {
+add this class to #pageContent if neccesary
+}*/
+
+#menu {
+    background-color: black;
+    min-width: 50%;
+    min-height: 500px;
+    border: 5px solid white;
+    box-shadow: 3px 3px 25px black;
+    position: relative;
+    font-family: sans-serif;
+    overflow: hidden;
+}
+#menuHeader h4 {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    padding: 1rem;
+    border-bottom: 5px solid white;
+}
+#diamond {
+    min-width: 250px;
+    min-height: 250px;
+    background: white;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+    -webkit-transform: translate(-50%, -40%) rotate(-45deg);
+}
+#menuTextArea {
+    color: black;
+    font-size: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+    -webkit-transform: translate(-50%, -50%) rotate(45deg);
+}
+#menuTextArea ul {
+    list-style-type: none;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0;
+}
+#menuTextArea ul li {
+    padding-bottom: 1rem;
+}
+#sideBar {
+    background-color: hsla(360, 100%, 100%, .5);
+    width: 45%;
+    min-height: 500px;
+    border-radius: 25px;
+    box-shadow: 3px 3px 25px black;
+    color:#7B6B30;
+    padding: 2rem;
+    font-family: sans-serif;
+    font-size: 1rem;
+    text-align: center;
+}
+#nameBox {
+    background: #7B6B30;
+    border-radius: 25px;
+    display: inline-block;
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: #E3D399;
+    margin: 0 auto;
+    min-width: 80%;
+    text-align: center;
+}
+#nameBox p {
+    margin: 0;
+}
+#sideBar .bake{
+    width: 50%;
+    margin: 0;
+    text-align: left;
+}
+.bake p {
+    margin: 0;
+    text-align: left;
+    text-indent: 0;
+    padding-left: 1rem;
+}
+#ingredients p, #ingredients ul, #ingredients {
+    text-align: left;
+    margin: 0;
+}
+#instructions p, #instructions ol, #instructions {
+    text-align: left;
+    margin: 0;
+}
+#sideBar .dotty {
+    border-top: 5px dotted #7B6B30;
+    margin-top: 1rem;
+}
+/*///////////////sign up form////////////////*/
+
+/*.signUpScreen {}*/
+
+.introMsg p {
+    color: white;
+    font-family: cursive;
+    padding: 20px 200px;
+    text-align: center;
+}
+.signUpForm {
+    display: block;
+    width: 400px;
+    height: 400px;
+    margin: 30px auto 30px auto;
+    padding: 50px;
+    background-color: hsla(360, 100%, 100%, .5);
+    border-radius: 30px;
+    font-family: Helvetica, sans-serif;
+}
+input {
+    width: 100%;
+    border-radius: 25px;
+    background-color: black;
+    /*    border: 2px solid black;*/
+    margin-bottom: 1.5em;
+    padding: .5em 2em;
+}
+label {
+    color: white;
+    font-size: 1em;
+}
+button {
+    width: auto;
+    padding: .25em 1em;
+    display: block;
+    margin: 10px auto 0px auto;
+    text-transform: uppercase;
+    color: black;
+    font-size: 1em;
+    background-color: white;
+    border-radius: 25px;
+}
+.signUpForm h4 {
+    /*    font-weight: 100;
+    margin-bottom: 1em;
+    margin-left: .25em;*/
+    color: black;
+}
+input:focus {
+    outline: none;
+    background-color: rgba(255, 74, 86, 1);
+    color: white;
+}
+.signUpForm input:focus + label {
+    opacity: 0;
+}
+.signUpForm input:valid + label {
+    opacity: 0;
+}
+.question {
+    position: relative;
+}
+.signUpForm label {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+}
+button:hover {
+    background-color: red;
+    border-color: white;
+    color: white;
+}
+button:focus {
+    background-color: blue;
+    border-color: white;
+    color: white;
+}
+button:active {
+    background-color: green;
+    border-color: white;
+    color: white;
+}
+/****************MEDIA QUERIES***********************/
+
+@media (max-width: 400px) {}
+@media (min-width: 400px) {}
+@media (min-width: 600px) and (max-width: 1000px) {}
+@media (max-width: 1000px) {
+   .triangleNav {
+    -webkit-transform: translate(-78%, 22%) rotate(-90deg);
+   } 
+   #pageContent {
+    padding: 4% 4% 0% 10%;
+}
+/***************JS**************************/
