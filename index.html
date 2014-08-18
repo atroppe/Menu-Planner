@@ -18,11 +18,11 @@
             <div class="tabBar"></div>
             <div class="tabs grid">
 
-                <div class="cell tab">appetizer</div>
-                <div class="cell tab">main course</div>
-                <div class="cell tab">side</div>
-                <div class="cell tab">desert</div>
-                <div class="cell tab">drink</div>
+                <div class="cell tab"><a href="#appetizer">appetizer</a></div>
+                <div class="cell tab"><a href="#main">main course</a></div>
+                <div class="cell tab"><a href="#side">side</a></div>
+                <div class="cell tab"><a href="#desert">desert</a></div>
+                <div class="cell tab"><a href="#drink">drink</a></div>
 
             </div>
         </div>
@@ -44,57 +44,45 @@
             </header>
         </div>
         <div id="pageContent" class="grid">
-            <div id="menu" class="cell">
-                <div id="menuHeader">
-                    <h4>My Menu</h4>
-                </div>
-                <div id="paperPattern">
-                    <div id="diamond">
-                        <div id="menuTextArea">
-                            <ul id="myRecipeList">
-                                <li>Appetizer</li>
-                                <li>Main Course</li>
-                                <li>Side 1</li>
-                                <li>Side 2</li>
-                                <li>Dessert</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="sideBar" class="cell">
-                <div id="nameBox">
-                    <p>Recipe Name</p>
-                </div>
-                <div class="grid dotty">
-                    <div class="cell bake">
-                        <p>Bake Temp</p>
-                        <p>350</p>
-                    </div>
-                    <div class="cell bake">
-                        <p>Bake Time</p>
-                        <p>30 min.</p>
-                    </div>
-                </div>
-                <div id="ingredients" class="dotty">
-                    <p>Ingredients:</p>
-                    <ul>
-                        <li>ingredient list</li>
-                        <li>item 1</li>
-                        <li>item 2</li>
-                    </ul>
-                </div>
-                <div id="instructions" class="dotty">
-                    <ol>
-                        <li>instructions list</li>
-                        <li>do this</li>
-                        <li>do that</li>
-                    </ol>
-                </div>
-            </div>
+            <!-- template goes here -->
         </div>
     </div>
 
+    <script type="amys-template" id="card-template">
+        <div id="sideBar" class="cell">
+            <div id="nameBox">
+                <p><%= attributes.recipeName %></p>
+            </div>
+            <div class="grid dotty">
+                <div class="cell bake">
+                    <p>Bake Temp:</p>
+                    <p id="bakeTemp"><%= attributes.BakeTemp %> º</p>
+                </div>
+                <div class="cell bake">
+                    <p>Bake Time:</p>
+                    <p id="bakeTime"><%= attributes.BakeTime %> min.</p>
+                </div>
+            </div>
+            <div id="ingredients" class="dotty">
+                <p>Ingredients:</p>
+                <ul id="ingredientsGoHere">
+                    <% _.each(attributes.ingredientList, function(ingredient){ %>
+                        <li><%= ingredient %></li>
+                    <% }) %>
+                </ul>
+            </div>
+            <div id="instructions" class="dotty">
+                <p>Instructions:</p>
+                <ol id="instructionsGoHere">
+                    <% _.each(attributes.instructions, function(step){ %>
+                        <li><%= step %></li>
+                    <% }) %>
+                </ol>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
     <script type="text/javascript" src="./js/app.js"></script>

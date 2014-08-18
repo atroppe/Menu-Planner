@@ -198,7 +198,7 @@ add this class to #pageContent if neccesary
 #sideBar {
     background-color: hsla(360, 100%, 100%, .5);
     width: 45%;
-    min-height: 500px;
+/*    min-height: 500px;*/
     border-radius: 25px;
     box-shadow: 3px 3px 25px black;
     color:#7B6B30;
@@ -206,9 +206,10 @@ add this class to #pageContent if neccesary
     font-family: sans-serif;
     font-size: 1rem;
     text-align: center;
+    margin-top: 3rem;
 }
 #nameBox {
-    background: #7B6B30;
+    background: HSLA(47, 44%, 34%, .5);
     border-radius: 25px;
     display: inline-block;
     padding: 1rem;
