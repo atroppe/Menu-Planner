@@ -7,22 +7,23 @@
     <link rel="stylesheet" type="text/css" href="./stylesheets/typeplate.css">
     <link rel="stylesheet" type="text/css" href="./stylesheets/styles.css">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Frijole|Special+Elite|Dancing+Script|Griffy' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
     <div id="bkdImg" class="goldFabric">
         <div class="triangleNav">
-            <div id="home">home</div>
-            <div id="foodCat">food category</div>
-            <div id="event">event theme</div>
+            <div id="home"><a href="#/home">home</a></div>
+            <div id="foodCat" class="showCategory">food category</div>
+            <div id="event">Event Theme</div>
             <div class="tabBar"></div>
             <div class="tabs grid">
 
-                <div class="cell tab"><a href="#appetizer">appetizer</a></div>
-                <div class="cell tab"><a href="#main">main course</a></div>
-                <div class="cell tab"><a href="#side">side</a></div>
-                <div class="cell tab"><a href="#desert">desert</a></div>
-                <div class="cell tab"><a href="#drink">drink</a></div>
+                <div class="cell tab" id="leftTab"><a href="#/appetizer">appetizer</a></div>
+                <div class="cell tab"><a href="#/main">main</a></div>
+                <div class="cell tab"><a href="#/side">side</a></div>
+                <div class="cell tab"><a href="#/dessert">dessert</a></div>
+                <div class="cell tab" id="rightTab"><a href="#/drink">drink</a></div>
 
             </div>
         </div>
@@ -33,21 +34,44 @@
                         My Menu Planner
                     </h2>
                 </div>
-                <div class="grid cell buttonBox">
-                    <div class="cell Button">
-                        <!-- <h3>Log In</h3> -->
-                    </div>
-                    <div class="cell Button">
-                        <!-- <h3>Sign Up</h3> -->
-                    </div>
+                <div class="cell buttonBox">
+                <div class="skewed">
+                   <!--  <p>View Menu</p> -->
+                </div>
                 </div>
             </header>
         </div>
         <div id="pageContent" class="grid">
-            <!-- template goes here -->
+            <div id="pulledRecipes">
+                <h4 class="showCategory">Food Category</h4>
+                <form class="grid">
+                    <div  class="insertListings">
+                    <!-- template -->
+                    </div>
+                    <div id="saveButton">
+                    <button>Save !</button>
+                    </div>
+                </form>
+            </div>
+            <div class="grid insertRecipesHere">
+                <!-- templates goes here -->
+            </div>
         </div>
     </div>
 
+<script type="and-another" id="theme-template">
+    <div class="themes">
+        <a id="holiday">Holiday</a>
+       <a id="party">Party</a>
+        <a id="picnic">Picnic</a>
+        <a id="weeknight">Weeknight</a>
+    </div>
+</script>
+<script type="another-template" id="listings-template">
+    <div class="cell recipeChoice"><input type="checkbox" name="recipeListing" value="choose">
+        <%= attributes.recipeName %>
+    </div>
+</script>
     <script type="amys-template" id="card-template">
         <div id="sideBar" class="cell">
             <div id="nameBox">
@@ -74,14 +98,15 @@
             <div id="instructions" class="dotty">
                 <p>Instructions:</p>
                 <ol id="instructionsGoHere">
-                    <% _.each(attributes.instructions, function(step){ %>
-                        <li><%= step %></li>
-                    <% }) %>
+                  <% _.each(attributes.instructions, function(step){ %>
+                  <li><%= step %></li>
+                  <% }) %>
                 </ol>
             </div>
         </div>
     </script>
 
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/path.js/0.8.4/path.min.js"></script>
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>

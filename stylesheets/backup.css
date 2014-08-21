@@ -1,0 +1,99 @@
+/*///////////////sign up form////////////////*/
+
+/*.signUpScreen {}*/
+
+/*
+.introMsg p {
+    color: white;
+    font-family: cursive;
+    padding: 20px 200px;
+    text-align: center;
+}
+.signUpForm {
+    display: block;
+    width: 400px;
+    height: 400px;
+    margin: 30px auto 30px auto;
+    padding: 50px;
+    background-color: hsla(360, 100%, 100%, .5);
+    border-radius: 30px;
+    font-family: Helvetica, sans-serif;
+}
+input {
+    width: 100%;
+    border-radius: 25px;
+    background-color: black;
+    margin-bottom: 1.5em;
+    padding: .5em 2em;
+}
+label {
+    color: white;
+    font-size: 1em;
+}
+button {
+    width: auto;
+    padding: .25em 1em;
+    display: block;
+    margin: 10px auto 0px auto;
+    text-transform: uppercase;
+    color: black;
+    font-size: 1em;
+    background-color: white;
+    border-radius: 25px;
+}
+.signUpForm h4 {
+    color: black;
+}
+input:focus {
+    outline: none;
+    background-color: rgba(255, 74, 86, 1);
+    color: white;
+}
+.signUpForm input:focus + label {
+    opacity: 0;
+}
+.signUpForm input:valid + label {
+    opacity: 0;
+}
+.question {
+    position: relative;
+}
+.signUpForm label {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+}
+button:hover {
+    background-color: red;
+    border-color: white;
+    color: white;
+}
+button:focus {
+    background-color: blue;
+    border-color: white;
+    color: white;
+}
+button:active {
+    background-color: green;
+    border-color: white;
+    color: white;
+}*/
+/*.buttonBox .Button {
+    background-color: black;
+    width: 40%;
+    height: 70px;
+    border-radius: 20px;
+    padding: .5rem;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+}
+.buttonBox .Button h3 {
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 100;
+    text-transform: uppercase;
+    position: relative;
+    top: 30%;
+}*/

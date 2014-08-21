@@ -1,0 +1,33 @@
+<script type="amys-template" id="card-template">
+        <div id="sideBar" class="cell">
+            <div id="nameBox">
+                <p><%= attributes.recipeName %></p>
+            </div>
+            <div class="grid dotty">
+                <div class="cell bake">
+                    <p>Bake Temp:</p>
+                    <p id="bakeTemp"><%= attributes.BakeTemp %> º</p>
+                </div>
+                <div class="cell bake">
+                    <p>Bake Time:</p>
+                    <p id="bakeTime"><%= attributes.BakeTime %> min.</p>
+                </div>
+            </div>
+            <div id="ingredients" class="dotty">
+                <p>Ingredients:</p>
+                <ul id="ingredientsGoHere">
+                    <% _.each(attributes.ingredientList, function(ingredient){ %>
+                        <li><%= ingredient %></li>
+                    <% }) %>
+                </ul>
+            </div>
+            <div id="instructions" class="dotty">
+                <p>Instructions:</p>
+                <ol id="instructionsGoHere">
+                  <% _.each(attributes.instructions, function(step){ %>
+                  <li><%= step %></li>
+                  <% }) %>
+                </ol>
+            </div>
+        </div>
+    </script>

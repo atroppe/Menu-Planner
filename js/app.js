@@ -15,28 +15,108 @@ function app() {
     var myRecipes = new RecipeList();
     var recipeData = [];
 
-    myRecipes.fetch().then(function() {
-        var matching = myRecipes.filter(function(r) {
-            return r.attributes.foodCategory === window.location.hash.slice(1);
-        });
-
-        console.log(matching)
-
-        if (matching.length) {
-            for (var i = 0; i < matching.length; i++) {
-                drawRecipe(matching[i]);
-            }
-        }
+    $(".tabs").on("click", ".tab", function() {
+        $(".activeTab").removeClass("activeTab");
+        $(this).addClass("activeTab");
     });
+    // $(".tabs").on("click", ".tab", function() {
+    //     $(".activeTab").removeClass("activeTab");
+    //     $(this).addClass("activeTab");
+    // });
+
 
     function drawRecipe(recipe) {
-        var myTemplateHTML = $('#card-template')[0].textContent;
-        console.log($('#card-template')[0]);
+        var myTemplateHTML = $('#card-template')[0].textContent
         var myTemplatingFn = _.template(myTemplateHTML);
         var resultingHTML = myTemplatingFn(recipe);
-        console.log(recipe)
-        $('#pageContent').append(resultingHTML);
+        $('.insertRecipesHere').append(resultingHTML);
         return;
-
     }
+
+    function recipeListings(category) {
+        var myTemplateHTML = $('#listings-template')[0].textContent
+        var myTemplatingFn = _.template(myTemplateHTML);
+        var resultingHTML = myTemplatingFn(category);
+        $('.insertListings').append(resultingHTML);
+        // return;
+    }
+
+    function eventThemes(theme) {
+        var myTemplateHTML = $('#theme-template')[0].textContent
+        $('.insertListings').append(myTemplateHTML);
+    }
+
+    Path.map("#/:someCategory").to(function() {
+        var category = this.params.someCategory;
+        myRecipes.fetch().then(function() {
+            var matching = myRecipes.filter(function(r) {
+                return r.attributes.foodCategory === category;
+            });
+
+            // console.log(matching);
+            // console.log(matching[0].attributes.recipeName);
+
+            if (matching.length) {
+                $('.insertRecipesHere').empty();
+                for (var i = 0; i < matching.length; i++) {
+                    drawRecipe(matching[i]);
+                }
+                $('.insertListings').empty();
+                for (var i = 0; i < matching.length; i++) {
+                    // console.log(matching[i].attributes.recipeName);
+                    // console.log(recipeListings(matching[i]));
+                    recipeListings(matching[i]);
+                }
+                $('.showCategory').html(matching[0].attributes.foodCategory);
+
+                var x = $(".recipeChoice");
+                console.log(x);	
+
+            } else if (category = "#/home") {
+                $('.insertRecipesHere').empty();
+                $('.showCategory').html("Choose a theme");
+                $('.insertListings').empty();
+                $('#saveButton').empty();
+                eventThemes();
+
+                $(".themes").on("click", "#party", function() {
+                    $("#bkdImg").removeClass().addClass("wood");
+                    $("#event").html("Party!");
+                    // $(".triangleNav").addClass("blueText");
+                });
+                $(".themes").on("click", "#weeknight", function() {
+                    $("#bkdImg").removeClass().addClass("chalkboard");
+                    $("#event").html("Weeknight meal");
+                    // $(".triangleNav").addClass("pinkText");
+                });
+                $(".themes").on("click", "#picnic", function() {
+                    $("#bkdImg").removeClass().addClass("picnic");
+                    $("#event").html("Picnic!");
+                });
+                $(".themes").on("click", "#holiday", function() {
+                    $("#bkdImg").removeClass().addClass("goldFabric");
+                    $("#event").html("Holiday");
+                });
+            }
+        });
+
+    });
+    Path.root("#/appetizer");
+    Path.listen();
+
+
+
+    // Path.map('#/:somewhere').to(function() {
+    //     var uRHere = window.location.hash;
+    //     if (uRHere = "#/home")
+    //         $('#pageContent').empty();
+    // });
+    // Path.root("#/home");
+    // Path.listen();
+
+
+
+    // ----------------------------
+    // var x = document.getElementById("myCheck").value;
+
 }
