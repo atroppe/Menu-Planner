@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title></title>
+    <title>My Menu Planner</title>
     <link rel="stylesheet" type="text/css" href="./stylesheets/normalize.css">
     <link rel="stylesheet" type="text/css" href="./stylesheets/typeplate.css">
     <link rel="stylesheet" type="text/css" href="./stylesheets/styles.css">
@@ -18,14 +18,13 @@
             <div id="event">Event Theme</div>
             <div class="tabBar"></div>
             <div class="tabs grid">
-
                 <div class="cell tab" id="leftTab"><a href="#/appetizer">appetizer</a></div>
                 <div class="cell tab"><a href="#/main">main</a></div>
                 <div class="cell tab"><a href="#/side">side</a></div>
                 <div class="cell tab"><a href="#/dessert">dessert</a></div>
                 <div class="cell tab" id="rightTab"><a href="#/drink">drink</a></div>
-
             </div>
+<!--              <a href="#/home"><div class="cell tabBar"><p>home</p></div></a> -->
         </div>
         <div class="topBar">
             <header class="grid">
@@ -48,8 +47,8 @@
                     <div  class="insertListings">
                     <!-- template -->
                     </div>
-                    <div id="saveButton">
-                    <button>Save !</button>
+                    <div>
+                    <input class="button" id="saveButton" type="submit" value="Save!">
                     </div>
                 </form>
             </div>
@@ -68,7 +67,7 @@
     </div>
 </script>
 <script type="another-template" id="listings-template">
-    <div class="cell recipeChoice"><input type="checkbox" name="recipeListing" value="choose">
+    <div class="cell recipeChoice"><input type="checkbox" name=" <%= attributes.recipeName %>" value="<%= id %>" id="stuff">
         <%= attributes.recipeName %>
     </div>
 </script>

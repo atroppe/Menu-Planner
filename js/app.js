@@ -1,6 +1,7 @@
 window.onload = app;
 
 function app() {
+    console.log("hello");
 
     var Recipe = Parse.Object.extend("Recipe", {
 
@@ -46,6 +47,33 @@ function app() {
         $('.insertListings').append(myTemplateHTML);
     }
 
+    Path.map('#/home').to(function(){
+    	$('.insertRecipesHere').empty();
+        $('.showCategory').html("Choose a theme");
+        $('.insertListings').empty();
+        $('#saveButton').addClass("hide");
+        eventThemes();
+
+        $(".themes").on("click", "#party", function() {
+            $("#bkdImg").removeClass().addClass("wood");
+            $("#event").html("Party!");
+            // $(".triangleNav").addClass("blueText");
+        });
+        $(".themes").on("click", "#weeknight", function() {
+            $("#bkdImg").removeClass().addClass("chalkboard");
+            $("#event").html("Weeknight meal");
+            // $(".triangleNav").addClass("pinkText");
+        });
+        $(".themes").on("click", "#picnic", function() {
+            $("#bkdImg").removeClass().addClass("picnic");
+            $("#event").html("Picnic!");
+        });
+        $(".themes").on("click", "#holiday", function() {
+            $("#bkdImg").removeClass().addClass("goldFabric");
+            $("#event").html("Holiday");
+        });
+    })
+
     Path.map("#/:someCategory").to(function() {
         var category = this.params.someCategory;
         myRecipes.fetch().then(function() {
@@ -68,41 +96,36 @@ function app() {
                     recipeListings(matching[i]);
                 }
                 $('.showCategory').html(matching[0].attributes.foodCategory);
+                $('#saveButton').removeClass("hide");
 
-                var x = $(".recipeChoice");
-                console.log(x);	
-
-            } else if (category = "#/home") {
-                $('.insertRecipesHere').empty();
-                $('.showCategory').html("Choose a theme");
-                $('.insertListings').empty();
-                $('#saveButton').empty();
-                eventThemes();
-
-                $(".themes").on("click", "#party", function() {
-                    $("#bkdImg").removeClass().addClass("wood");
-                    $("#event").html("Party!");
-                    // $(".triangleNav").addClass("blueText");
-                });
-                $(".themes").on("click", "#weeknight", function() {
-                    $("#bkdImg").removeClass().addClass("chalkboard");
-                    $("#event").html("Weeknight meal");
-                    // $(".triangleNav").addClass("pinkText");
-                });
-                $(".themes").on("click", "#picnic", function() {
-                    $("#bkdImg").removeClass().addClass("picnic");
-                    $("#event").html("Picnic!");
-                });
-                $(".themes").on("click", "#holiday", function() {
-                    $("#bkdImg").removeClass().addClass("goldFabric");
-                    $("#event").html("Holiday");
-                });
             }
         });
 
     });
-    Path.root("#/appetizer");
+    Path.root("#/home");
     Path.listen();
+
+    // var saveRecipes = function() {
+
+    var stuff = $('#stuff');
+    var myStuff = [];
+    $(".insertListings").on("click", "input", function(event) {
+    	var indexOfId = myStuff.indexOf(this.value);
+
+		if(indexOfId === -1){
+			myStuff.push(this.value);
+		} else {
+			myStuff[indexOfId] = null;
+		}
+
+		console.log(myStuff)
+    });
+    // console.log(myStuff);
+    // console.log(stuff);
+    // console.log(stuff.value);
+    
+
+
 
 
 

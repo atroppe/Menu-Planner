@@ -92,7 +92,7 @@ potatoKugel.save({
         "mix, pour into pan and bake",
     ],
     "foodCategory": "side",
-    "eventTheme": "shabbat",
+    "eventTheme": "holiday",
     "Kosher": true,
     "Passover": false,
     "lowFat": false,
@@ -111,12 +111,164 @@ newRecipe.save({
         "8 apples, thinly sliced",
         "3 T lemon juice",
         "2 t cinnamon",
-        "2 eggs"
-        "3/4 cup oil"
-        ""
+        "2 eggs",
+        "3/4 cup oil",
+        "1 cup sugar",
+        "2 t vanilla",
+        "4 cups flour"
     ],
     "instructions": [
+        "combine apples, lemon juice and cinnamon",
+        "in a seperate bowl combine eggs with oil and sugar",
+        "add vanilla and flour and mix until crumbles form",
+        "layer half of the dough in a pan",
+        "add the apple mixturemon top of dough",
+        "top apple with remaining dough",
+        "bake 1 hour at 325°"
+    ],
+    "foodCategory": "desset",
+    "eventTheme": "holiday",
+    "Kosher": true,
+    "Passover": false,
+    "lowFat": false,
+    "lowCarb": false,
+    "vegetarian": true,
+    "dairyFree": true,
+    "recipeTricks": "If you prefer less dough, you can add extra fruit and split the dough between 2 pans.",
+}, {});
 
+var broccoliKugel = new Recipe();
+newRecipe.save({
+    "recipeName": "Broccoli-Spinach Kugel",
+    "BakeTime": 60,
+    "BakeTemp": 350,
+    "ingredientList": [
+        "16 oz bag frozen broccoli",
+        "16 oz bag frozen spinach",
+        "1 chopped onion",
+        "1 c mayo",
+        "5 eggs",
+        "3 T onion soup mix",
+        "Pepper to taste",
+        "½ c almond milk",
+    ],
+    "instructions": [
+        "thaw frozen vegetables and mix all ingredients",
+        "pour into pan and bake at 350° for 1 hour",
+    ],
+    "foodCategory": "side",
+    "eventTheme": "holiday",
+    "Kosher": true,
+    "Passover": true,
+    "lowFat": false,
+    "lowCarb": true,
+    "vegetarian": true,
+    "dairyFree": true,
+    "recipeTricks": "",
+}, {});
+
+var redCabbage = new Recipe();
+newRecipe.save({
+    "recipeName": "Red Cabbage Cole Slaw",
+    "BakeTime": ,
+    "BakeTemp": ,
+    "ingredientList": [
+        "16 oz shredded cabbage",
+        "¼ c sugar",
+        "3T cider vinegar",
+        "½ cup mayo",
+        "Salt and pepper to taste",
+    ],
+    "instructions": [
+        "combine dressing ingredients and pour over cabbage",
+        "mix well and serve"
+    ],
+    "foodCategory": "side",
+    "eventTheme": "weeknight",
+    "Kosher": true,
+    "Passover": true,
+    "lowFat": false,
+    "lowCarb": false,
+    "vegetarian": true,
+    "dairyFree": true,
+    "recipeTricks": "",
+}, {});
+
+var beanSalad = new Recipe();
+newRecipe.save({
+    "recipeName": "Three bean Salad",
+    "BakeTime": ,
+    "BakeTemp": ,
+    "ingredientList": [
+        "1 can green beans",
+        "1 can corn",
+        "1 can kidney beans",
+        "1 can yellow wax beans",
+        "1/3 c oil",
+        "1/3 c lemon juice or vinegar",
+        "1/3 c sugar or splenda",
+        "1/4 t pepper",
+        "1/4 t garlic",
+        "1/2 t salt",
+        "1 t parsley",
+    ],
+    "instructions": [
+        "combine canned vegetables in a large bowl",
+        "combine dressing ingredients and pour over salad",
+        "mix well and serve",
+    ],
+    "foodCategory": "side",
+    "eventTheme": "weeknight",
+    "Kosher": true,
+    "Passover": false,
+    "lowFat": false,
+    "lowCarb": true,
+    "vegetarian": true,
+    "dairyFree": true,
+    "recipeTricks": "",
+}, {});
+
+var ceasarSalad = new Recipe();
+newRecipe.save({
+    "recipeName": "Non-Dairy Ceasar Salad",
+    "BakeTime": ,
+    "BakeTemp": ,
+    "ingredientList": [
+        "1 bag pre-cut romain lettuce",
+        "1/4 cup olive oil",
+        "1 T lemon juice",
+        "3 T mayo",
+        "1 t dry mustard",
+        "1 T dry parsley",
+        "1 cup croutons",
+    ],
+    "instructions": [
+        "place lettuce in a large bowl",
+        "combine salad ingredients and pour over lettuce",
+        "mix well",
+        "top with croutons just before serving",
+    ],
+    "foodCategory": "side",
+    "eventTheme": "holiday",
+    "Kosher": true,
+    "Passover": false,
+    "lowFat": false,
+    "lowCarb": true,
+    "vegetarian": true,
+    "dairyFree": true,
+    "recipeTricks": "",
+}, {});
+
+var limaRice = new Recipe();
+newRecipe.save({
+    "recipeName": "Dill Rice with Lima Beans",
+    "BakeTime": ,
+    "BakeTemp": ,
+    "ingredientList": [
+"2 cups dry basmati rice",
+    ],
+    "instructions": [
+"cook rice according to package directions",
     ],
     "foodCategory": ,
     "eventTheme": ,
@@ -128,42 +280,3 @@ newRecipe.save({
     "dairyFree": ,
     "recipeTricks": ,
 }, {});
-
-
-Apple kugel
-8 apples sliced
-3T lemon juice
-2t cinnamon(combine above ing)
-4c flour
-1½ c sugar
-2 eggs
-2t vanilla
-1 c oil(above ing
-    for dough)
-1 layer dough,
-1 layer apples,
-1 layer dough
-Bake 1 hr at 325
-
-BROCCOLI SPINACH KUGEL
-16 oz bag broccoli
-16 oz bag spinach
-1 chopped onion
-1 c mayo
-5 eggs
-3 T onion soup
-Pepper to taste
-Up to½ c pareve milk
-if needed
-
-Red cabbage cole slaw
-I don’ t really measure this one– just combine to taste
-Abt 16 oz shredded cabbage¼ c sugar
-3T cider vinegar½ cup mayo
-Salt and pepper to taste
-
-
-Bean salad dressing: 1 / 3 c oil
-1 / 3 c lemon juice or vinegar
-1 / 3 c sugar or splenda¼ tpepper¼ t garlic½ t salt
-1 t parsley
