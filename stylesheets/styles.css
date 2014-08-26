@@ -26,6 +26,9 @@
 
 /*-----------------------background---------------------*/
 
+body {
+    min-width: 300px;
+}
 #bkdImg {
     width: 100%;
     min-height: 100vh;
@@ -39,7 +42,6 @@
 }
 .goldFabric {
     background-image: url(http://cl.ly/image/3x2D413Y0m1W/gold-fabric-texture.jpg);
-
 }
 .picnic {
     background-image: url(http://cl.ly/image/1C2F3d0w121W/red_and_white_tablecloth_pattern_picture.jpg);
@@ -50,14 +52,14 @@
 /*------------------Monster Nav!!!-------------*/
 
 .triangleNav {
-    min-height: 200px;
-/*    min-width: 700px;*/
+    /*    min-height: 200px;*/
+    /*    min-width: 700px;*/
     text-align: center;
     position: absolute;
     top: 0;
     left: 0;
     transform-origin: center;
-    -webkit-transform: translate(-41%, -38%) rotate(-45deg) translateZ(0);
+    -webkit-transform: translate(-38%, -31%) rotate(-45deg) translateZ(0);
     font-family: 'Special Elite', cursive;
     color: black;
     z-index: 2;
@@ -98,12 +100,12 @@
 }
 .tab {
     border: 2px solid white;
-/*    width: 20%;*/
+    /*    width: 20%;*/
     text-align: center;
     background-color: hsla(360, 100%, 100%, .5);
     font-size: 1rem;
     padding: 1px 25px;
-    box-shadow: 5px 10px 15px black;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, .3);
 }
 .activeTab {
     background-color: white;
@@ -127,26 +129,27 @@
 .triangleNav a:active {
     color: #7A6A2F;
 }
-.clickable {
+/*.clickable {
     position: relative;
 }
 .clickable a {
-    position:absolute;
-    width:100%;
-    height:100%;
-    top:0;
-    left:0;
-    text-decoration:none; 
-    z-index:3;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-decoration: none;
+    z-index: 3;
 }
 .clickable p {
     position: relative;
-}
+}*/
+
 /*----------------top bar/header---------------*/
 
-.topBar {} header {
+header {
     background-color: hsla(360, 100%, 100%, .5);
-    min-height: 70px;
+    /*    min-height: 70px;*/
     width: 100%;
     padding-left: 40%;
     padding-right: 10%;
@@ -166,22 +169,22 @@
     -webkit-transform: translateY(-50%);*/
     font-family: 'Dancing Script', cursive;
 }
-.skewed p {
+.skewed a {
     text-align: center;
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Special Elite', cursive;
     color: #7A6A2F;
     font-size: 1rem;
-    -webkit-transform: rotate(80deg);
+    text-align: center;
+    /*    -webkit-transform: rotate(80deg);*/
+    /*        -webkit-transform: skew(-55deg);*/
 }
 .skewed {
     background-color: white;
-    height: 83px;
-    text-align: center;
-    font-family: 'Dancing Script', cursive;
-    color: #7A6A2F;
-    font-size: 1rem;
+    /*height: 83px;*/
     min-width: 3rem;
-    -webkit-transform: skew(55deg);
+    margin-top: 1rem;
+    padding: 0px 10px;
+    /*    -webkit-transform: skew(55deg);*/
 }
 /*---------------page content----------------*/
 
@@ -195,34 +198,59 @@
 add this class to #pageContent if neccesary
 }*/
 
-/*
+#menuHere {
+    width: 100%;
+    text-align: center;
+}
 #menu {
-    background-color: black;
-    min-width: 50%;
-    min-height: 500px;
+    min-width: 415px;
     border: 5px solid white;
     box-shadow: 3px 3px 25px black;
+    display: inline-block;
+/*    margin-top: 3rem;*/
+}
+#paperPattern {
+    background-color: white;
+    width: 100%;
+    height: 415px;
     position: relative;
-    font-family: sans-serif;
     overflow: hidden;
 }
+.boxes {
+    background-image: url(http://cl.ly/image/0K1R1S1Y1V2y/hg-handdoodledoverlay-1.png);
+    background-repeat: repeat;
+    background-position: center;
+    background-size: 100% auto;
+    overflow: hidden;
+    width: 50%;
+    height: 250px;
+}
+/*.box1 {
+    transform-origin: center;
+    -webkit-transform: translate(-20%, -25%) rotate(45deg);
+    background-origin: content-box;
+}*/
+
 #menuHeader h4 {
     color: white;
     font-size: 2rem;
     text-align: center;
     padding: 1rem;
     border-bottom: 5px solid white;
+    margin: 0 auto;
+    background-color: black;
+    font-family: 'Dancing Script', cursive;
 }
 #diamond {
-    min-width: 250px;
-    min-height: 250px;
+    min-width: 300px;
+    min-height: 300px;
     background: white;
     margin: 0 auto;
     position: absolute;
     top: 50%;
     left: 50%;
     transform-origin: center;
-    -webkit-transform: translate(-50%, -40%) rotate(-45deg);
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg);
 }
 #menuTextArea {
     color: black;
@@ -232,17 +260,13 @@ add this class to #pageContent if neccesary
     left: 50%;
     transform-origin: center;
     -webkit-transform: translate(-50%, -50%) rotate(45deg);
-}
-#menuTextArea ul {
-    list-style-type: none;
-    margin: 0 auto;
     text-align: center;
-    padding: 0;
+    font-family: 'Dancing Script', cursive;
+    width: 100%;
 }
-#menuTextArea ul li {
-    padding-bottom: 1rem;
-}*/
-
+#menuTextArea p {
+    text-align: center;
+}
 /*---------------pulling json info--------------------*/
 
 .showCategory {}
@@ -254,6 +278,8 @@ add this class to #pageContent if neccesary
     min-height: 200px;
     border-radius: 25px;
     padding: 2rem;
+    margin-top: 4rem;
+    /*    box-shadow: 3px 3px 25px black;*/
 }
 #pulledRecipes h4 {
     color: white;
@@ -280,11 +306,12 @@ add this class to #pageContent if neccesary
     font-size: 1rem;
     text-align: left;
     width: 33%;
+    padding-right: 1rem;
 }
 .recipeChoice input, .recipeChoice input {
     display: inline-block;
 }
-.hide{
+.hide {
     display: none;
 }
 #saveButton {
@@ -292,7 +319,7 @@ add this class to #pageContent if neccesary
 }
 /*------------recipe cards---------------------*/
 
-#sideBar {
+.cards {
     background-color: hsla(360, 100%, 100%, .65);
     width: 45%;
     /*    min-height: 500px;*/
@@ -305,7 +332,7 @@ add this class to #pageContent if neccesary
     text-align: center;
     margin-top: 3rem;
 }
-#nameBox {
+.nameBox {
     background: HSLA(47, 44%, 34%, .5);
     border-radius: 25px;
     display: inline-block;
@@ -316,10 +343,10 @@ add this class to #pageContent if neccesary
     min-width: 80%;
     text-align: center;
 }
-#nameBox p {
+.nameBox p {
     margin: 0;
 }
-#sideBar .bake {
+.cards .bake {
     width: 50%;
     margin: 0;
     text-align: left;
@@ -330,32 +357,101 @@ add this class to #pageContent if neccesary
     text-indent: 0;
     padding-left: 1rem;
 }
-#ingredients p, #ingredients ul, #ingredients {
+.ingredients p, .ingredients ul, .ingredients {
     text-align: left;
     margin: 0;
 }
-#instructions p, #instructions ol, #instructions {
+.instructions p, .instructions ol, .instructions {
     text-align: left;
     margin: 0;
 }
-#sideBar .dotty {
+.cards .dotty {
     border-top: 5px dotted #7B6B30;
     margin-top: 1rem;
 }
 /****************MEDIA QUERIES***********************/
 
-@media (max-width: 1000px) {
-    .triangleNav {
-        -webkit-transform: translate(-78%, 20%) rotate(-90deg);
+@media (max-width: 599px) {
+    .title h2 {
+        font-size: 1.5rem;
+        padding: .5rem;
     }
+    .triangleNav {
+        -webkit-transform: translate(0, 50px) rotate(0deg);
+        width: 100%;
+    }
+    header {
+        padding-left: 0%;
+        padding-right: 0%;
+        text-align: center;
+    }
+    #home, #foodCat, #event {
+        display: none;
+    }
+    .tab {
+        font-size: .6rem;
+        padding: 2px;
+    }
+    #leftTab {
+        border-left: 7px solid white;
+    }
+    #rightTab {
+        border-right: 7px solid white;
+    }
+    .recipeChoice {
+        width: 100%;
+    }
+    .cards {
+        width: 100%;
+    }
+}
+@media (min-width: 600px) and (max-width: 1000px) {
+    /*    .triangleNav {
+        -webkit-transform: translate(-78%, 20%) rotate(-90deg);
+    }*/
+    .triangleNav {
+        -webkit-transform: translate(0, 75px) rotate(0deg);
+        width: 100%;
+    }
+    header {
+        padding-left: 0%;
+        padding-right: 0%;
+        text-align: center;
+    }
+    #home, #foodCat, #event {
+        display: none;
+    }
+    .tab {
+        font-size: 1rem;
+        padding: 0px 10px;
+    }
+    #leftTab {
+        border-left: 7px solid white;
+    }
+    #rightTab {
+        border-right: 7px solid white;
+    }
+    header {
+        padding-left: 0%;
+        padding-right: 0%;
+        text-align: center;
+    }
+    .recipeChoice {
+        width: 50%;
+    }
+    .cards {
+        width: 45%;
+    }
+}
+@media (max-width: 1000px) {
     #pageContent {
-        padding: 15% 4% 0% 10%;
+        padding: 100px 10% 10% 10%;
     }
     .buttonBox {
         display: none;
     }
-    header {
-        padding-left: 15%;
+    .title {
+        width: 100%;
     }
 }
 /***************JS**************************/

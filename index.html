@@ -13,18 +13,23 @@
 <body>
     <div id="bkdImg" class="goldFabric">
         <div class="triangleNav">
-            <div id="home"><a href="#/home">home</a></div>
+            <div id="home"><a href="#/home">home</a>
+            </div>
             <div id="foodCat" class="showCategory">food category</div>
             <div id="event">Event Theme</div>
             <div class="tabBar"></div>
             <div class="tabs grid">
-                <div class="cell tab" id="leftTab"><a href="#/appetizer">appetizer</a></div>
-                <div class="cell tab"><a href="#/main">main</a></div>
-                <div class="cell tab"><a href="#/side">side</a></div>
-                <div class="cell tab"><a href="#/dessert">dessert</a></div>
-                <div class="cell tab" id="rightTab"><a href="#/drink">drink</a></div>
+                <div class="cell tab" id="leftTab"><a href="#/appetizer">appetizer</a>
+                </div>
+                <div class="cell tab"><a href="#/main">main</a>
+                </div>
+                <div class="cell tab"><a href="#/side">side</a>
+                </div>
+                <div class="cell tab"><a href="#/dessert">dessert</a>
+                </div>
+                <div class="cell tab" id="rightTab"><a href="#/miscellaneous">miscellaneous</a>
+                </div>
             </div>
-<!--              <a href="#/home"><div class="cell tabBar"><p>home</p></div></a> -->
         </div>
         <div class="topBar">
             <header class="grid">
@@ -34,9 +39,9 @@
                     </h2>
                 </div>
                 <div class="cell buttonBox">
-                <div class="skewed">
-                   <!--  <p>View Menu</p> -->
-                </div>
+                    <div class="skewed">
+                        <a href="#/menu">view menu</a>
+                    </div>
                 </div>
             </header>
         </div>
@@ -44,71 +49,28 @@
             <div id="pulledRecipes">
                 <h4 class="showCategory">Food Category</h4>
                 <form class="grid">
-                    <div  class="insertListings">
-                    <!-- template -->
+                    <div class="insertListings">
+                        <!-- recipe choice list template -->
                     </div>
                     <div>
-                    <input class="button" id="saveButton" type="submit" value="Save!">
+                        <input class="button" id="saveButton" type="submit" value="Save!">
                     </div>
                 </form>
             </div>
             <div class="grid insertRecipesHere">
-                <!-- templates goes here -->
+                <!-- recipe cards templates -->
+            </div>
+            <div id="menuHere" class="grid">
+                <!-- menu template -->
             </div>
         </div>
     </div>
-
-<script type="and-another" id="theme-template">
-    <div class="themes">
-        <a id="holiday">Holiday</a>
-       <a id="party">Party</a>
-        <a id="picnic">Picnic</a>
-        <a id="weeknight">Weeknight</a>
-    </div>
-</script>
-<script type="another-template" id="listings-template">
-    <div class="cell recipeChoice"><input type="checkbox" name=" <%= attributes.recipeName %>" value="<%= id %>" id="stuff">
-        <%= attributes.recipeName %>
-    </div>
-</script>
-    <script type="amys-template" id="card-template">
-        <div id="sideBar" class="cell">
-            <div id="nameBox">
-                <p><%= attributes.recipeName %></p>
-            </div>
-            <div class="grid dotty">
-                <div class="cell bake">
-                    <p>Bake Temp:</p>
-                    <p id="bakeTemp"><%= attributes.BakeTemp %> º</p>
-                </div>
-                <div class="cell bake">
-                    <p>Bake Time:</p>
-                    <p id="bakeTime"><%= attributes.BakeTime %> min.</p>
-                </div>
-            </div>
-            <div id="ingredients" class="dotty">
-                <p>Ingredients:</p>
-                <ul id="ingredientsGoHere">
-                    <% _.each(attributes.ingredientList, function(ingredient){ %>
-                        <li><%= ingredient %></li>
-                    <% }) %>
-                </ul>
-            </div>
-            <div id="instructions" class="dotty">
-                <p>Instructions:</p>
-                <ol id="instructionsGoHere">
-                  <% _.each(attributes.instructions, function(step){ %>
-                  <li><%= step %></li>
-                  <% }) %>
-                </ol>
-            </div>
-        </div>
-    </script>
 
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/path.js/0.8.4/path.min.js"></script>
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
+    <!--  <script type="text/javascript" src="./js/recipes.js"></script> -->
     <script type="text/javascript" src="./js/app.js"></script>
 </body>
 

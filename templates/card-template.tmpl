@@ -1,33 +1,32 @@
-<script type="amys-template" id="card-template">
-        <div id="sideBar" class="cell">
-            <div id="nameBox">
+
+        <div class="cards cell">
+            <div class="nameBox">
                 <p><%= attributes.recipeName %></p>
             </div>
             <div class="grid dotty">
                 <div class="cell bake">
                     <p>Bake Temp:</p>
-                    <p id="bakeTemp"><%= attributes.BakeTemp %> º</p>
+                    <p class="bakeTemp"><%= attributes.BakeTemp %> º</p>
                 </div>
                 <div class="cell bake">
                     <p>Bake Time:</p>
-                    <p id="bakeTime"><%= attributes.BakeTime %> min.</p>
+                    <p class="bakeTime"><%= attributes.BakeTime %> min.</p>
                 </div>
             </div>
-            <div id="ingredients" class="dotty">
+            <div class="ingredients dotty">
                 <p>Ingredients:</p>
-                <ul id="ingredientsGoHere">
+                <ul class="ingredientsGoHere">
                     <% _.each(attributes.ingredientList, function(ingredient){ %>
                         <li><%= ingredient %></li>
                     <% }) %>
                 </ul>
             </div>
-            <div id="instructions" class="dotty">
+            <div class="instructions dotty">
                 <p>Instructions:</p>
-                <ol id="instructionsGoHere">
+                <ol class="instructionsGoHere">
                   <% _.each(attributes.instructions, function(step){ %>
                   <li><%= step %></li>
                   <% }) %>
                 </ol>
             </div>
         </div>
-    </script>

@@ -1,7 +1,7 @@
 window.onload = app;
 
 function app() {
-    console.log("hello");
+    console.log("app.js is working");
 
     var Recipe = Parse.Object.extend("Recipe", {
 
@@ -20,59 +20,82 @@ function app() {
         $(".activeTab").removeClass("activeTab");
         $(this).addClass("activeTab");
     });
-    // $(".tabs").on("click", ".tab", function() {
-    //     $(".activeTab").removeClass("activeTab");
-    //     $(this).addClass("activeTab");
-    // });
 
 
     function drawRecipe(recipe) {
-        var myTemplateHTML = $('#card-template')[0].textContent
-        var myTemplatingFn = _.template(myTemplateHTML);
-        var resultingHTML = myTemplatingFn(recipe);
-        $('.insertRecipesHere').append(resultingHTML);
-        return;
+        $.get('./templates/card-template.tmpl').then(function(myTemplateHTML) {
+            var myTemplatingFn = _.template(myTemplateHTML);
+            var resultingHTML = myTemplatingFn(recipe);
+            $('.insertRecipesHere').append(resultingHTML);
+        });
     }
 
     function recipeListings(category) {
-        var myTemplateHTML = $('#listings-template')[0].textContent
-        var myTemplatingFn = _.template(myTemplateHTML);
-        var resultingHTML = myTemplatingFn(category);
-        $('.insertListings').append(resultingHTML);
-        // return;
+        // var myTemplateHTML = $('#listings-template')[0].textContent
+        $.get('./templates/listings-template.tmpl').then(function(myTemplateHTML) {
+            var myTemplatingFn = _.template(myTemplateHTML);
+            var resultingHTML = myTemplatingFn(category);
+            $('#pulledRecipes').removeClass("hide");
+            $('.insertListings').append(resultingHTML);
+        })
+
     }
 
     function eventThemes(theme) {
-        var myTemplateHTML = $('#theme-template')[0].textContent
-        $('.insertListings').append(myTemplateHTML);
+        $.get('./templates/themes.tmpl').then(function(myTemplateHTML) {
+            $('#pulledRecipes').removeClass("hide");
+            $('.insertListings').html(myTemplateHTML);
+        });
     }
 
-    Path.map('#/home').to(function(){
-    	$('.insertRecipesHere').empty();
-        $('.showCategory').html("Choose a theme");
+    // ----------------adding menu-------------------
+    function addMenuInlineScript() {
+        var myTemplateHTML = $("#menu-template")[0].textContent;
         $('.insertListings').empty();
+        $('.insertRecipesHere').empty();
+        $('#menuHere').html(myTemplateHTML);
+    }
+
+    function addMenuTemplateAJAX() {
+        $.get('./templates/menu.tmpl').then(function(myTemplateHTML) {
+            $('#pulledRecipes').addClass("hide");
+            $('.insertRecipesHere').empty();
+            $('#menuHere').html(myTemplateHTML);
+        });
+    }
+    //---------------maps-----------------------
+
+    Path.map('#/home').to(function() {
+        $('#menuHere').empty();
+        $('.insertRecipesHere').empty();
+        $('.showCategory').html("Choose a theme");
         $('#saveButton').addClass("hide");
         eventThemes();
+    });
 
-        $(".themes").on("click", "#party", function() {
-            $("#bkdImg").removeClass().addClass("wood");
-            $("#event").html("Party!");
-            // $(".triangleNav").addClass("blueText");
-        });
-        $(".themes").on("click", "#weeknight", function() {
-            $("#bkdImg").removeClass().addClass("chalkboard");
-            $("#event").html("Weeknight meal");
-            // $(".triangleNav").addClass("pinkText");
-        });
-        $(".themes").on("click", "#picnic", function() {
-            $("#bkdImg").removeClass().addClass("picnic");
-            $("#event").html("Picnic!");
-        });
-        $(".themes").on("click", "#holiday", function() {
-            $("#bkdImg").removeClass().addClass("goldFabric");
-            $("#event").html("Holiday");
-        });
-    })
+    $("body").on("click", "#party", function() {
+        console.log("party click event");
+        $("#bkdImg").removeClass().addClass("wood");
+        $("#event").html("Party!");
+        // $(".triangleNav").addClass("blueText");
+    });
+    $("body").on("click", "#weeknight", function() {
+        $("#bkdImg").removeClass().addClass("chalkboard");
+        $("#event").html("Weeknight meal");
+        // $(".triangleNav").addClass("pinkText");
+    });
+    $("body").on("click", "#picnic", function() {
+        $("#bkdImg").removeClass().addClass("picnic");
+        $("#event").html("Picnic!");
+    });
+    $("body").on("click", "#holiday", function() {
+        $("#bkdImg").removeClass().addClass("goldFabric");
+        $("#event").html("Holiday");
+    });
+
+    Path.map('#/menu').to(function() {
+        addMenuTemplateAJAX();
+    });
 
     Path.map("#/:someCategory").to(function() {
         var category = this.params.someCategory;
@@ -85,6 +108,7 @@ function app() {
             // console.log(matching[0].attributes.recipeName);
 
             if (matching.length) {
+                $('#menuHere').empty();
                 $('.insertRecipesHere').empty();
                 for (var i = 0; i < matching.length; i++) {
                     drawRecipe(matching[i]);
@@ -102,45 +126,30 @@ function app() {
         });
 
     });
+
+    // ----------------activating path-------------------
+
     Path.root("#/home");
     Path.listen();
 
+    //-----------------------------saving my recipes-----
     // var saveRecipes = function() {
 
     var stuff = $('#stuff');
     var myStuff = [];
     $(".insertListings").on("click", "input", function(event) {
-    	var indexOfId = myStuff.indexOf(this.value);
+        var indexOfId = myStuff.indexOf(this.value);
 
-		if(indexOfId === -1){
-			myStuff.push(this.value);
-		} else {
-			myStuff[indexOfId] = null;
-		}
+        if (indexOfId === -1) {
+            myStuff.push(this.value);
+        } else {
+            myStuff[indexOfId] = null;
+        }
 
-		console.log(myStuff)
+        console.log(myStuff)
     });
     // console.log(myStuff);
     // console.log(stuff);
     // console.log(stuff.value);
-    
-
-
-
-
-
-    // Path.map('#/:somewhere').to(function() {
-    //     var uRHere = window.location.hash;
-    //     if (uRHere = "#/home")
-    //         $('#pageContent').empty();
-    // });
-    // Path.root("#/home");
-    // Path.listen();
-
-
-
-    // ----------------------------
-    // var x = document.getElementById("myCheck").value;
 
 }
-// testing heroku stuff
