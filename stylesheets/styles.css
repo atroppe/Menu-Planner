@@ -151,16 +151,15 @@ header {
     background-color: hsla(360, 100%, 100%, .5);
     /*    min-height: 70px;*/
     width: 100%;
-    padding-left: 40%;
-    padding-right: 10%;
+    padding-left: 45%;
+    padding-right: 5%;
     position: fixed;
 }
 .title {
     /*    max-width: 70%;*/
     height: 100%;
 }
-.title h2 {
-    color: HSLA(47, 44%, 34%, 1);
+#mainTitle {
     text-align: center;
     font-size: 3rem;
     padding: .5rem;
@@ -168,6 +167,18 @@ header {
     /*    top: 50%;
     -webkit-transform: translateY(-50%);*/
     font-family: 'Dancing Script', cursive;
+}
+.textGold{
+    color: HSLA(47, 44%, 34%, 1);
+}
+.textBlue {
+    color: #1E3980;
+}
+.textRed {
+    color: #FC383A;
+}
+.textBlack {
+    color: black;
 }
 .skewed a {
     text-align: center;
@@ -207,7 +218,7 @@ add this class to #pageContent if neccesary
     border: 5px solid white;
     box-shadow: 3px 3px 25px black;
     display: inline-block;
-/*    margin-top: 3rem;*/
+    /*    margin-top: 3rem;*/
 }
 #paperPattern {
     background-color: white;
@@ -216,14 +227,21 @@ add this class to #pageContent if neccesary
     position: relative;
     overflow: hidden;
 }
+.bottom {
+    background-image: url(http://cl.ly/image/2g402H250Z1D/watercolor_dot1.jpg);
+    background-size: 150% auto;
+}
+.top {
+    background-image: url(http://cl.ly/image/3b3i473i1l03/watercolor_dot3.eps.jpg);
+    background-size: 100% auto;
+}
 .boxes {
-    background-image: url(http://cl.ly/image/0K1R1S1Y1V2y/hg-handdoodledoverlay-1.png);
     background-repeat: repeat;
     background-position: center;
-    background-size: 100% auto;
     overflow: hidden;
     width: 50%;
-    height: 250px;
+    height: 208px;
+    border: solid 5px #1E3980;
 }
 /*.box1 {
     transform-origin: center;
@@ -238,7 +256,7 @@ add this class to #pageContent if neccesary
     padding: 1rem;
     border-bottom: 5px solid white;
     margin: 0 auto;
-    background-color: black;
+    background-color: #1E3980;
     font-family: 'Dancing Script', cursive;
 }
 #diamond {
@@ -251,9 +269,10 @@ add this class to #pageContent if neccesary
     left: 50%;
     transform-origin: center;
     -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+    border: solid 5px #1E3980;
 }
 #menuTextArea {
-    color: black;
+    color: #1E3980;
     font-size: 1rem;
     position: absolute;
     top: 50%;
@@ -372,7 +391,7 @@ add this class to #pageContent if neccesary
 /****************MEDIA QUERIES***********************/
 
 @media (max-width: 599px) {
-    .title h2 {
+    #mainTitle {
         font-size: 1.5rem;
         padding: .5rem;
     }
@@ -441,6 +460,9 @@ add this class to #pageContent if neccesary
     }
     .cards {
         width: 45%;
+    }
+    #menu {
+        margin-top: 3rem;
     }
 }
 @media (max-width: 1000px) {
