@@ -1,22 +1,7 @@
-# How to use your server
-1. clone / copy the files (server.js, package.json, Procfile) to your computer or project folder
-2. `npm init`
-3. `npm install`
-4. `echo "node_modules" > .gitignore`
-5. `node server.js <port number>` - where port number is any number (try 9000 for starters)
-6. open your browser to `localhost:<port number>`
-7. When you are ready to turn off the server, hit `CTRL + C`
+#My Menu Planner
 
-# What does this give you?
-1. Myth CSS PostProcessor (http://myth.io)
-2. serves you files all nice and dandy
-3. sets us up to push our own servers to heroku! (more to come)
+###Technologies:
+Adobe CS, Path.js, jQuery, Underscore.js, templating, JavaScript, Parse SDK (built on top of Backbone.js), HTML5, CSS3, Responsive Design, Heroku deployment.
 
-# Want to push your local server to a live server?
-1. setup a Heroku account
-2. install the Heroku toolbelt: https://s3.amazonaws.com/assets.heroku.com/heroku-toolbelt/heroku-toolbelt.pkg
-3. run `heroku login` in your terminal
-4. create a random Heroku server with `heroku create`; this will register a remote git endpoint for you (`git remote -v`), which should now show Github (origin) and Heroku
-5. then finally push your code repo up to Heroku (yes you can push to Github OR Heroku!) via a git push: `git push heroku master`
-6. run `heroku ps:scale web=1` to spin-up some resources for your app
-7. from here on out, anytime you want to push to the same heroku server, you only need to repeat step 6.
+###Description
+If you do a lot of cooking, planning menus can become tedious and time consuming even if you love to cook. I chose to create "My Menu Planner" to add some fun to the task of planning menus, while providing myself with a flexible subject to review what I have learned in this course. "My Menu Planner" is a responsive, single page application that is built using parse to store data. The user can choose from four visual themes and then browse different categories of recipes.
