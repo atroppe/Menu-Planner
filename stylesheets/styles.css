@@ -59,7 +59,7 @@ body {
     top: 0;
     left: 0;
     transform-origin: center;
-    -webkit-transform: translate(-38%, -31%) rotate(-45deg) translateZ(0);
+    transform: translate(-38%, -31%) rotate(-45deg) translateZ(0);
     font-family: 'Special Elite', cursive;
     color: black;
     z-index: 2;
@@ -168,7 +168,7 @@ header {
     -webkit-transform: translateY(-50%);*/
     font-family: 'Dancing Script', cursive;
 }
-.textGold{
+.textGold {
     color: HSLA(47, 44%, 34%, 1);
 }
 .textBlue {
@@ -268,7 +268,7 @@ add this class to #pageContent if neccesary
     top: 50%;
     left: 50%;
     transform-origin: center;
-    -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+    transform: translate(-50%, -50%) rotate(-45deg);
     border: solid 5px #1E3980;
 }
 #menuTextArea {
@@ -278,7 +278,7 @@ add this class to #pageContent if neccesary
     top: 50%;
     left: 50%;
     transform-origin: center;
-    -webkit-transform: translate(-50%, -50%) rotate(45deg);
+    transform: translate(-50%, -50%) rotate(45deg);
     text-align: center;
     font-family: 'Dancing Script', cursive;
     width: 100%;
@@ -396,7 +396,7 @@ add this class to #pageContent if neccesary
         padding: .5rem;
     }
     .triangleNav {
-        -webkit-transform: translate(0, 50px) rotate(0deg);
+        transform: translate(0, 50px) rotate(0deg);
         width: 100%;
     }
     header {
@@ -425,11 +425,9 @@ add this class to #pageContent if neccesary
     }
 }
 @media (min-width: 600px) and (max-width: 1000px) {
-    /*    .triangleNav {
-        -webkit-transform: translate(-78%, 20%) rotate(-90deg);
-    }*/
+
     .triangleNav {
-        -webkit-transform: translate(0, 75px) rotate(0deg);
+        transform: translate(0, 75px) rotate(0deg);
         width: 100%;
     }
     header {
@@ -497,10 +495,4 @@ add this class to #pageContent if neccesary
     transform: scale(1.5);
     cursor: pointer;
 }
-/*.blueText {
-    color: blue;
-}
-.pinkText {
-    color: #F2B4A1;
-}
-*/
+
