@@ -16,114 +16,12 @@ function app() {
     var myRecipes = new RecipeList();
     var recipeData = [];
 
-    // var cornSalad = new Recipe();
-    // cornSalad.save({
-    //     "recipeName": "Avocado and Corn Salad",
-    //     "BakeTime": 0,
-    //     "BakeTemp": 0,
-    //     "ingredientList": [
-    //         "5 Ears Corn, husk removed, brush with olive oil and grill",
-    //         "remove corn with sharp knife",
-    //         "2 Avocado’ s, diced and sprinkled with lemon juice to prevent browning",
-    //         "2 C.Tomatoes, red and yellow cherry variety or equivalent",
-    //         "1 Small red onion, finely diced",
-    //         "1 1 / 2 C.English cucumber, skin on and chopped",
-    //         "dressing: ",
-    //         "6 T.Olive oil",
-    //         "2 T.Sherry vinegar",
-    //         "1 t.Garlic powder",
-    //         "2 T.Fresh cilantro, minced",
-    //         "1 / 2 t.Salt",
-    //         "10 Grinds of fresh ground pepper"
-    //     ],
-    //     "instructions": [
-    //         "Add vegetables to a large bowl and refrigerate until ready to use.",
-    //         "Add all of the dressing ingredients in a small glass jar with a lid. Shake really well.”, “Taste and adjust seasoning and ratios of oil and vinegar as you desire.",
-    //         "When ready to serve salad, add the dressing and gently toss."
-    //     ],
-    //     "foodCategory": "side",
-    //     "eventTheme": "party",
-    //     "Kosher": true,
-    //     "Passover": true,
-    //     "lowFat": true,
-    //     "lowCarb": true,
-    //     "vegetarian": true,
-    //     "dairyFree": true,
-    //     "recipeTricks": "",
-    // }, {});
+    // myRecipes.fetch().then(function(r){
+    //     console.log(myRecipes.toJSON());
+    //     console.log(r);
+    // })
 
-    // var grilledChicken = new Recipe();
-    // grilledChicken.save({
-    //     "recipeName": "Marinated Grilled Chicken",
-    //     "BakeTime": 20,
-    //     "BakeTemp": 0,
-    //     "ingredientList": [
-    //         'juice of 2 whole lemons',
-    //         '5 sprigs fresh parsley, chopped',
-    //         '3 cloves garlic, smashed and finely chopped',
-    //         '1/2 teaspoon crushed red pepper',
-    //         'olive oil',
-    //         '8 chicken thighs, trimmed of excess fat',
-    //         'salt to taste',
-    //     ],
-    //     "instructions": [
-    //         'clean chicken and place in a large ziplock bag.  Add lemon juice, parsley, and pepper',
-    //         'let marinate at least 1 hour',
-    //         'remove from marinade and sprinkle with olive oil and salt',
-    //         'place chicken on grill about 20 minutes, turning every 3-4 minute until no longer pink',
-    //     ],
-    //     "foodCategory": "main",
-    //     "eventTheme": "party",
-    //     "Kosher": true,
-    //     "Passover": true,
-    //     "lowFat": false,
-    //     "lowCarb": true,
-    //     "vegetarian": false,
-    //     "dairyFree": false,
-    //     "recipeTricks": "",
-    // }, {});
 
-    // var donutMuffins = new Recipe();
-    // donutMuffins.save({
-    //     "recipeName": "Glazed Donut Muffins",
-    //     "BakeTime": 15,
-    //     "BakeTemp": 425,
-    //     "ingredientList": [
-    //         "1/4 cup butter",
-    //         "1/4 cup vegetable oil",
-    //         "3/4 cup sugar",
-    //         "1/3 cup brown sugar",
-    //         "2 large eggs",
-    //         "1 1/2 t baking powder",
-    //         "1/2 t baking soda",
-    //         "1 t ground nutmeg",
-    //         "2 t cinnamon",
-    //         "3/4 t salt",
-    //         "1 t vanilla extract",
-    //         "2 2/3 cup flour",
-    //         "1 cup milk",
-    //         "3 T melted butter",
-    //         "1 cup powdered sugar",
-    //         "1 t vanilla",
-    //         "2 T hot water"
-    //     ],
-    //     "instructions": [
-    //         "Line cupcake tray with liners",
-    //         "In your mixer, beat together butter, oil and sugars until smooth. Add eggs and beat until fluffy. Add powder, soda, nutmeg, cinnamon, salt vanilla, milk and flour. Beat well",
-    //         "Spoon batter into liners and fill to tops. Bake for 15-17 minutes or until tops are golden and springy to the touch. Let cool 10 minutes before adding Glaze",
-    //         "To make the glaze, mix melted butter, powdered sugar, vanilla and water together. Mix until smooth",
-    //         "When muffins have cooled slightly, dip the muffin top into the glaze and allow the glaze to harden. Once hardened, dip a second time and allow to harden"
-    //     ],
-    //     "foodCategory": "dessert",
-    //     "eventTheme": "party",
-    //     "Kosher": true,
-    //     "Passover": false,
-    //     "lowFat": false,
-    //     "lowCarb": false,
-    //     "vegetarian": true,
-    //     "dairyFree": false,
-    //     "recipeTricks": "",
-    // }, {});
 
     $(".tabs").on("click", ".tab", function() {
         $(".activeTab").removeClass("activeTab");
@@ -165,13 +63,7 @@ function app() {
         $('#menuHere').html(myTemplateHTML);
     }
 
-    function addMenuTemplateAJAX() {
-        $.get('./templates/menu.tmpl').then(function(myTemplateHTML) {
-            $('#pulledRecipes').addClass("hide");
-            $('.insertRecipesHere').empty();
-            $('#menuHere').html(myTemplateHTML);
-        });
-    }
+
     //---------------maps-----------------------
 
     Path.map('#/home').to(function() {
@@ -217,6 +109,7 @@ function app() {
 
             // console.log(matching);
             // console.log(matching[0].attributes.recipeName);
+            // console.log(matching[0].id);
 
             if (matching.length) {
                 $('#menuHere').empty();
@@ -263,4 +156,44 @@ function app() {
     // console.log(stuff);
     // console.log(stuff.value);
 
+    //-------------
+    function addMenuTemplateAJAX() {
+        $.get('./templates/menu.tmpl').then(function(myTemplateHTML) {
+            $('#pulledRecipes').addClass("hide");
+            $('.insertRecipesHere').empty();
+            $('#menuHere').html(myTemplateHTML);
+            $('.myMenu').html(userArray);
+        });
+    }
+
+
+    var userArray = [];
+    $('body').on('click', 'input', function() {
+        //.on('submit',...)
+        // var i = userArray.indexOf(this.value);
+        // console.log(i);
+        var addRecipeToList = $("input").val();
+        //$('input')[i].value;
+        alert("Recipe Saved!");
+        console.log(addRecipeToList);
+        userArray.push(addRecipeToList);
+        console.log(userArray);
+    });
+
+    // var userList = userArray.forEach(function(recipe){
+    //     $('.myMenu').create(?).append(li);
+    // }
+
 }
+// $("input[name=nameGoesHere]").val();
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
