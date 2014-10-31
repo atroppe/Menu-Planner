@@ -13,51 +13,50 @@
 <body>
     <div id="bkdImg" class="goldFabric">
         <div class="triangleNav">
-            <div id="home"><a href="#/home">home</a>
-            </div>
-            <div id="foodCat" class="showCategory">food category</div>
-            <div id="event">Event Theme</div>
+            <!--             <div class="wrapper"> -->
+            <a class="steps" id="home" href="#/home">1. New menu</a>
+            <a class="steps" id="event">2. Choose a course</a>
+            <a class="steps" id="foodCat">3. Choose your recipes!</a>
             <div class="tabBar"></div>
             <div class="tabs grid">
-                <div class="cell tab" id="leftTab"><a href="#/appetizer">appetizer</a>
-                </div>
-                <div class="cell tab"><a href="#/main">main</a>
-                </div>
-                <div class="cell tab"><a href="#/side">side</a>
-                </div>
-                <div class="cell tab"><a href="#/dessert">dessert</a>
-                </div>
-                <div class="cell tab" id="rightTab"><a href="#/miscellaneous">miscellaneous</a>
-                </div>
+                <a id="leftTab" class="cell tab" href="#/appetizer">appetizer</a>
+                <a class="cell tab" href="#/main">main</a>
+                <a class="cell tab" href="#/side">side</a>
+                <a class="cell tab" href="#/dessert">dessert</a>
+                <a class="cell tab" id="rightTab" href="#/miscellaneous">miscellaneous</a>
             </div>
         </div>
-        <div class="topBar">
-            <header class="grid">
-                <div class="cell title">
-                    <h2 id="mainTitle" class="textGold">
-                        My Menu Planner
-                    </h2>
-                </div>
-                <div class="cell buttonBox">
-                    <div class="skewed">
-                        <a href="#/menu">view menu</a>
-                    </div>
-                </div>
-            </header>
-        </div>
+
+        <header class="grid">
+            <div class="cell title">
+                <h2 id="mainTitle" class="textGold">
+                    <!--                         My Menu Planner -->
+                </h2>
+            </div>
+            <div class="cell buttonBox">
+                <a class="skewed" href="#/up"><i class="fa fa-chevron-up"></i></a>
+                <a class="skewed" href="#/menu"><i class="fa fa-file-text-o"></i></a>
+                <a class="skewed" href="#/print"><i class="fa fa-print"></i></a>
+            </div>
+        </header>
+
         <div id="pageContent" class="grid">
-            <div id="pulledRecipes">
-                <h4 class="showCategory">Food Category</h4>
-                <form class="grid">
-                    <div class="insertListings">
-                        <!-- recipe choice list template -->
-                    </div>
-                    <div>
-                        <input class="button" id="saveButton" type="submit" value="Save!">
-                    </div>
-                </form>
+            <div class="theme">
             </div>
-            <div class="grid insertRecipesHere">
+           <!--  <div class="grid sidebar">
+                <div id="pulledRecipes" class="cell">
+                    <h4 class="showCategory">Food Category</h4>
+                    <form class="grid">
+                        <div class="insertListings">
+                            recipe choice list template
+                        </div>
+                        <div>
+                            <input class="button" id="saveButton" type="submit" value="Save!">
+                        </div>
+                    </form>
+                </div>
+            </div> -->
+            <div class="insertRecipesHere grid">
                 <!-- recipe cards templates -->
             </div>
             <div id="menuHere" class="grid">
