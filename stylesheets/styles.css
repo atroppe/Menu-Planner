@@ -147,18 +147,16 @@ a.steps:hover, a.steps:active, a.tab:hover, a.tab:active, a.skewed:hover, a.skew
 .title, .buttonBox {
     vertical-align: middle;
 }
+.space {
+    width: 229px;
+}
 /*----------------top bar/header---------------*/
 
 header {
     background-color: hsla(360, 100%, 100%, .5);
-    /*    min-height: 70px;*/
-    
     width: 100%;
-    /*    padding-left: 45%;*/
-    
-    padding: 5% 5% 5% 38%;
+    padding: 1% 5%;
     position: fixed;
-    /*    height: 200px;*/
 }
 .title {
     /*    max-width: 70%;*/
@@ -175,11 +173,12 @@ header {
     font-family: 'Dancing Script', cursive;*/
     
     background-image: url("../images/menu-logo.png");
-    width: 359px;
-    height: 142px;
+    width: 269px;
+    height: 105px;
     background-size: 100% auto;
     background-repeat: no-repeat;
-    padding-top: 50px;
+    margin: 0 auto;
+    display: inline-block;
 }
 .textGold {
     color: HSLA(47, 44%, 34%, 1);
@@ -196,8 +195,9 @@ header {
 /*---------------page content----------------*/
 
 #pageContent {
-    width: 100%;
-    padding: 25% 7% 7% 10%;
+    max-width: 1000px;
+    padding-top: 139px;
+    margin: 0 auto;
 }
 /*----------------final Menu Page------------------*/
 /*.finalMenuPage {
@@ -209,16 +209,17 @@ add this class to #pageContent if neccesary
     text-align: center;
 }
 #menu {
-    min-width: 415px;
-    min-height: 415px;
-    /*    border: 5px solid white;*/
-    
+    min-width: 400px;
+    min-height: 200px;
+    background-color: hsla(360, 100%, 100%, .85);
+    border-radius: 25px;
     box-shadow: 3px 3px 25px black;
-    display: inline-block;
-    /*    margin-top: 3rem;*/
-    
-    background-color: white;
+    color: black;
+    padding: 2rem;
     font-family: 'Special Elite', serif;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 3rem;
 }
 #menuHeader h4 {
     color: black;
@@ -226,6 +227,10 @@ add this class to #pageContent if neccesary
     text-align: center;
     padding: 1rem;
     margin: 0 auto;
+}
+ul.menuTextArea {
+    list-style: none;
+    padding: 0;
 }
 /*---------------pulling json info--------------------*/
 
@@ -281,17 +286,17 @@ add this class to #pageContent if neccesary
 /*------------recipe cards---------------------*/
 
 .insertRecipesHere {
-    width: 75%;
-    display: inline-block;
+/*    width: 75%;*/
+/*    display: inline-block;*/
     vertical-align: top;
 }
-.sidebar {
+/*.sidebar {
     width: 25%;
     display: inline-block;
     vertical-align: top;
-}
+}*/
 .cards {
-    background-color: hsla(360, 100%, 100%, .65);
+    background-color: hsla(360, 100%, 100%, .85);
     width: 45%;
     /*    min-height: 500px;*/
     
@@ -303,6 +308,7 @@ add this class to #pageContent if neccesary
     font-size: 1rem;
     text-align: center;
     margin-top: 3rem;
+    cursor: pointer;
 }
 .nameBox {
     background: HSLA(47, 44%, 34%, .5);
@@ -310,7 +316,7 @@ add this class to #pageContent if neccesary
     display: inline-block;
     padding: 1rem;
     font-size: 1.5rem;
-    color: #E3D399;
+    color: white;
     margin: 0 auto;
     min-width: 80%;
     text-align: center;
@@ -340,6 +346,13 @@ add this class to #pageContent if neccesary
 .cards .dotty {
     border-top: 5px dotted #7B6B30;
     margin-top: 1rem;
+}
+.newMenu {
+    font-size: 1rem;
+    color: black;
+    background-color: white;
+    min-width: 300px;
+    min-height: 300px;
 }
 /****************MEDIA QUERIES***********************/
 
@@ -435,7 +448,7 @@ add this class to #pageContent if neccesary
     min-height: 200px;
     border-radius: 25px;
     padding: 2rem;
-    margin-top: 4rem;
+    margin-top: 3rem;
 }
 .themes {
     width: 100%;
