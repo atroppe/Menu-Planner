@@ -205,21 +205,22 @@ header {
 /*---------------homepage-------------------*/
 
 .tagline {
-/*    text-align: center;*/
     width: 70%;
-    background-color: hsla(360, 100%, 100%, .75);
+    background-color: hsla(360, 100%, 100%, .85);
     border-radius: 25px;
     padding: 2rem;
     margin: 5rem auto 0 auto;
+/*    box-shadow: 3px 3px 25px black;*/
+    border: solid 5px #7B6B30;
 }
-#triangle-right, .theme {
+#right, .theme {
     vertical-align: middle;
 }
 .theme {
-    /*    background-color: hsla(360, 100%, 100%, .75);
-    border-radius: 25px;
-    padding: 2rem;
-    margin-top: 5rem;*/
+    width: 60%;
+}
+#right {
+    width: 30%;
 }
 .themes {
     width: 90%;
@@ -246,17 +247,24 @@ header {
     margin: 0;
     /*    width: 100%;*/
 }
-#triangle-right {
+/*#triangle-right {
     width: 0;
     height: 0;
     border-top: 50px solid transparent;
     border-left: 100px solid black;
     border-bottom: 50px solid transparent;
+}*/
+
+a#right:link, a#right:visited {
+    color: #7B6B30;
+    font-size: 2rem;
+    font-family: 'Special Elite', serif;
+    text-decoration: none;
+}
+a#right:hover, a#right:active {
+    color: #1E3980;
 }
 /*----------------final Menu Page------------------*/
-/*.finalMenuPage {
-add this class to #pageContent if neccesary
-}*/
 
 #menuHere {
     width: 100%;
@@ -352,7 +360,7 @@ ul.menuTextArea {
     cursor: pointer;
 }
 .nameBox {
-    background: HSLA(47, 44%, 34%, .5);
+    background: HSLA(47, 44%, 34%, 1);
     border-radius: 25px;
     display: inline-block;
     padding: 1rem;
@@ -388,13 +396,13 @@ ul.menuTextArea {
     border-top: 5px dotted #7B6B30;
     margin-top: 1rem;
 }
-.newMenu {
+/*.newMenu {
     font-size: 1rem;
     color: black;
     background-color: white;
     min-width: 300px;
     min-height: 300px;
-}
+}*/
 /****************MEDIA QUERIES***********************/
 
 @media (max-width: 599px) {

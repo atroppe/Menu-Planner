@@ -40,7 +40,8 @@ function app() {
     //---------------maps-----------------------
 
     Path.map('#/home').to(function() {
-        $("a#triangle-right").attr('href', '#/appetizer');
+        var $right = $('a#right');
+        $right.attr('href', '#/appetizer');
         userArray = [];
         $('.theme').html('<h4>Choose a theme for your menu!</h4>');
         $(".activeTab").removeClass("activeTab");
@@ -102,16 +103,17 @@ function app() {
             console.log(matching[0].id);
             console.log(category);
 
+            var $right = $('a#right');
             if (category === 'home') {
-                $("a#triangle-right").attr('href', '#/appetizer');
+                $right.attr('href', '#/appetizer');
             } else if (category === 'appetizer') {
-                $("a#triangle-right").attr('href', '#/main');
+                $right.attr('href', '#/main');
             } else if (category === 'main') {
-                $("a#triangle-right").attr('href', '#/side');
+                $right.attr('href', '#/side');
             } else if (category === 'side') {
-                $("a#triangle-right").attr('href', '#/dessert');
+                $right.attr('href', '#/dessert');
             } else if (category === 'dessert') {
-                $("a#triangle-right").attr('href', '#/menu');
+                $right.attr('href', '#/menu');
             }
 
 
