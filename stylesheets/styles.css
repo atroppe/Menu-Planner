@@ -359,7 +359,7 @@ ul.menuTextArea {
     margin: 0;
 }
 .cards .dotty {
-    border-top: 5px dotted #7B6B30;
+    border-top: 3px dotted #7B6B30;
     margin-top: 1rem;
 }
 /*.newMenu {
@@ -441,6 +441,16 @@ ul.menuTextArea {
     #menu {
         margin-top: 3rem;
     }
+    .cards p, li {
+        font-size: .75rem;
+    }
+    .nameBox {
+        /*     ?   min-width: 80%;*/
+    }
+    .nameBox p {
+        padding: 1rem;
+        font-size: 1rem;
+    }
 }
 @media (max-width: 1000px) {
     #pageContent {
@@ -488,16 +498,6 @@ ul.menuTextArea {
         font-size: 1rem;
         padding: 1.5rem;
     }
-    /*    .cards p, li {
-        font-size: .75rem;
-    }
-    .nameBox {
-     ?   min-width: 80%;
-    }
-    .nameBox p {
-        padding: 1rem;
-        font-size: 1rem;
-    }*/
 }
 @media print {
     body {
