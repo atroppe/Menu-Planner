@@ -26,7 +26,7 @@
 /*-----------------------background---------------------*/
 
 body {
-    min-width: 300px;
+    min-width: 400px;
 }
 #bkdImg {
     width: 100%;
@@ -224,7 +224,8 @@ header {
     width: 30%;
 }
 .themes {
-/*    width: 90%;*/
+    /*    width: 90%;*/
+    
     margin: 3rem auto;
 }
 .themes a {
@@ -270,6 +271,8 @@ a#right:hover, a#right:active {
 }
 .badge {
     width: 25%;
+    text-align: center;
+    margin-bottom: 10%;
 }
 /*----------------final Menu Page------------------*/
 
@@ -302,84 +305,39 @@ ul.menuTextArea {
     list-style: none;
     padding: 0;
 }
-/*-------------pulled recipe list-------------------*/
-/*#pulledRecipes {
-    width: 85%;
-    background-color: hsla(0, 0%, 0%, .5);
-    min-height: 200px;
-    border-radius: 25px;
-    padding: 2rem;
-    margin-top: 4rem;*/
-/*    box-shadow: 3px 3px 25px black;*/
-/*}*/
-/*.button {
-    font-family: 'Dancing Script', cursive;
-    font-size: 1rem;
-    padding: 0rem 2rem;
-    border-radius: 20px;
-    text-align: center;
-    margin: 0 auto;
-    color: #F6E5B1;
-    background-color: #7A6A2F;
-    min-width: 3rem;
-    display: block;
-}*/
-/*.recipeChoice {
-    color: white;
-    font-family: 'Special Elite', serif;
-    font-size: 1rem;
-    text-align: left;
-    width: 100%;
-    padding-right: 1rem;
-}
-.recipeChoice input, .recipeChoice input {
-    display: inline-block;
-}*/
-/*#saveButton {
-    font-size: 1rem;
-}*/
 /*------------recipe cards---------------------*/
 
 .insertRecipesHere {
-    /*    width: 75%;*/
-    /*    display: inline-block;*/
-    
     vertical-align: top;
 }
-/*.sidebar {
-    width: 25%;
-    display: inline-block;
-    vertical-align: top;
-}*/
-
 .cards {
     background-color: hsla(360, 100%, 100%, .85);
     width: 45%;
-    /*    min-height: 500px;*/
-    
     border-radius: 25px;
     box-shadow: 3px 3px 25px black;
     color: #7B6B30;
     padding: 2rem;
-    font-family: 'Special Elite', serif;
-    font-size: 1rem;
     text-align: center;
     margin-top: 3rem;
     cursor: pointer;
+}
+.cards p, li {
+    font-family: 'Special Elite', serif;
+    font-size: 1rem;
 }
 .nameBox {
     background: HSLA(47, 44%, 34%, 1);
     border-radius: 25px;
     display: inline-block;
-    padding: 1rem;
-    font-size: 1.5rem;
-    color: white;
     margin: 0 auto;
     min-width: 80%;
     text-align: center;
 }
 .nameBox p {
     margin: 0;
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: white;
 }
 .cards .bake {
     width: 50%;
@@ -414,11 +372,9 @@ ul.menuTextArea {
 /****************MEDIA QUERIES***********************/
 
 @media (max-width: 599px) {
-    /*    #mainTitle {
-        font-size: 1.5rem;
-        padding: .5rem;
-    }*/
-    
+    .badge {
+        width: 50%;
+    }
     .triangleNav {
         transform: translate(0, 50px) rotate(0deg);
         width: 100%;
@@ -441,23 +397,28 @@ ul.menuTextArea {
     }
     .cards {
         width: 100%;
+        max-width: 325px;
     }
-    /*    header {
-        padding-left: 0%;
-        padding-right: 0%;
+    .insertRecipesHere {
         text-align: center;
-    }*/
+    }
+    #mainTitle {
+        width: 269px;
+        height: 66px;
+        background-size: 66% auto;
+    }
+    .cards p, li {
+        font-size: .75rem;
+    }
+    .nameBox {
+        /*     ?   min-width: 80%;*/
+    }
+    .nameBox p {
+        padding: 1rem;
+        font-size: 1rem;
+    }
 }
 @media (min-width: 600px) and (max-width: 1000px) {
-    .triangleNav {
-        transform: translate(0, 75px) rotate(0deg);
-        width: 100%;
-    }
-    header {
-        padding-left: 0%;
-        padding-right: 0%;
-        text-align: center;
-    }
     #home, #foodCat, #event {
         display: none;
     }
@@ -471,12 +432,6 @@ ul.menuTextArea {
     #rightTab {
         border-right: 7px solid white;
     }
-    /*    header {
-        padding-left: 0%;
-        padding-right: 0%;
-        text-align: center;
-    }*/
-    
     .recipeChoice {
         width: 50%;
     }
@@ -488,10 +443,25 @@ ul.menuTextArea {
     }
 }
 @media (max-width: 1000px) {
-    /*    #pageContent {
-        padding: 100px 10% 10% 10%;
+    #pageContent {
+        /*        padding: 100px 10% 10% 10%;*/
+        
+        padding: 139px 10% 10% 10%;
+    }
+    /*    header {
+        padding-left: 0%;
+        padding-right: 0%;
+        text-align: center;
     }*/
     
+    header {
+        padding: 0%;
+        text-align: center;
+    }
+    .triangleNav {
+        transform: translate(0, 75px) rotate(0deg);
+        width: 100%;
+    }
     .buttonBox, .space {
         display: none;
     }
@@ -504,10 +474,6 @@ ul.menuTextArea {
         height: 66px;
         background-size: 66% auto;
     }
-    header {
-        padding: 0%;
-        text-align: center;
-    }
     .tagline {
         padding: 1rem;
         margin: 3rem auto 0 auto;
@@ -518,9 +484,20 @@ ul.menuTextArea {
     a#right span {
         display: none;
     }
-    .badge {
-        width: 50%;
+    .themes a {
+        font-size: 1rem;
+        padding: 1.5rem;
     }
+    /*    .cards p, li {
+        font-size: .75rem;
+    }
+    .nameBox {
+     ?   min-width: 80%;
+    }
+    .nameBox p {
+        padding: 1rem;
+        font-size: 1rem;
+    }*/
 }
 @media print {
     body {
