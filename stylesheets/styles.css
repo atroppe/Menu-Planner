@@ -210,7 +210,8 @@ header {
     border-radius: 25px;
     padding: 2rem;
     margin: 5rem auto 0 auto;
-/*    box-shadow: 3px 3px 25px black;*/
+    /*    box-shadow: 3px 3px 25px black;*/
+    
     border: solid 5px #7B6B30;
 }
 #right, .theme {
@@ -223,7 +224,7 @@ header {
     width: 30%;
 }
 .themes {
-    width: 90%;
+/*    width: 90%;*/
     margin: 3rem auto;
 }
 .themes a {
@@ -255,14 +256,20 @@ header {
     border-bottom: 50px solid transparent;
 }*/
 
-a#right:link, a#right:visited {
-    color: #7B6B30;
+a#right {
     font-size: 2rem;
     font-family: 'Special Elite', serif;
     text-decoration: none;
+    text-align: center;
+}
+a#right:link, a#right:visited {
+    color: #7B6B30;
 }
 a#right:hover, a#right:active {
     color: #1E3980;
+}
+.badge {
+    width: 25%;
 }
 /*----------------final Menu Page------------------*/
 
@@ -282,6 +289,7 @@ a#right:hover, a#right:active {
     font-size: 1rem;
     text-align: center;
     margin-top: 3rem;
+    cursor: pointer;
 }
 #menuHeader h4 {
     color: black;
@@ -406,18 +414,14 @@ ul.menuTextArea {
 /****************MEDIA QUERIES***********************/
 
 @media (max-width: 599px) {
-    #mainTitle {
+    /*    #mainTitle {
         font-size: 1.5rem;
         padding: .5rem;
-    }
+    }*/
+    
     .triangleNav {
         transform: translate(0, 50px) rotate(0deg);
         width: 100%;
-    }
-    header {
-        padding-left: 0%;
-        padding-right: 0%;
-        text-align: center;
     }
     #home, #foodCat, #event {
         display: none;
@@ -438,6 +442,11 @@ ul.menuTextArea {
     .cards {
         width: 100%;
     }
+    /*    header {
+        padding-left: 0%;
+        padding-right: 0%;
+        text-align: center;
+    }*/
 }
 @media (min-width: 600px) and (max-width: 1000px) {
     .triangleNav {
@@ -462,11 +471,12 @@ ul.menuTextArea {
     #rightTab {
         border-right: 7px solid white;
     }
-    header {
+    /*    header {
         padding-left: 0%;
         padding-right: 0%;
         text-align: center;
-    }
+    }*/
+    
     .recipeChoice {
         width: 50%;
     }
@@ -478,14 +488,46 @@ ul.menuTextArea {
     }
 }
 @media (max-width: 1000px) {
-    #pageContent {
+    /*    #pageContent {
         padding: 100px 10% 10% 10%;
-    }
-    .buttonBox {
+    }*/
+    
+    .buttonBox, .space {
         display: none;
     }
     .title {
         width: 100%;
+        text-align: center;
+    }
+    #mainTitle {
+        width: 269px;
+        height: 66px;
+        background-size: 66% auto;
+    }
+    header {
+        padding: 0%;
+        text-align: center;
+    }
+    .tagline {
+        padding: 1rem;
+        margin: 3rem auto 0 auto;
+    }
+    .theme h4 {
+        font-size: 1rem;
+    }
+    a#right span {
+        display: none;
+    }
+    .badge {
+        width: 50%;
+    }
+}
+@media print {
+    body {
+        visibility: hidden;
+    }
+    #menu {
+        visibility: visible;
     }
 }
 /***************JS**************************/

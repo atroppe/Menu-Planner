@@ -81,7 +81,7 @@ function app() {
     });
 
     Path.map('#/menu').to(function() {
-        $('.theme').html('<h4>Click on your menu to see your recipes!</h4>');
+        $('.theme').html('<h4>Click on your menu to print!</h4>');
         // $('.theme').addClass('hide');
         // $('#menuHere').removeClass("hide");
         $emptyAll.empty();
@@ -98,10 +98,10 @@ function app() {
                 return r.attributes.foodCategory === category;
             });
 
-            console.log(matching);
-            console.log(matching[0].attributes.recipeName);
-            console.log(matching[0].id);
-            console.log(category);
+            // console.log(matching);
+            // console.log(matching[0].attributes.recipeName);
+            // console.log(matching[0].id);
+            // console.log(category);
 
             var $right = $('a#right');
             if (category === 'home') {
@@ -115,6 +115,9 @@ function app() {
             } else if (category === 'dessert') {
                 $right.attr('href', '#/menu');
             }
+            // else {
+            //     $right.addClass('.hide');
+            // }
 
 
             if (matching.length) {
@@ -136,6 +139,11 @@ function app() {
         });
 
     });
+    // Path.map('#/print').to(function() {
+    //     var $menu = $('#menu');
+    //     window.print();
+    //     console.log('print');
+    // });
 
     // ----------------activating path-------------------
 
@@ -198,14 +206,27 @@ function app() {
     getRecipe();
 
     function printToMenu() {
-            var menu = $('.menuTextArea');
+            var $menu = $('.menuTextArea');
             // menu.innerText('WAT');
             if (!userArray) return;
             userArray.forEach(function(recipe) {
-                menu.append('<li>' + recipe + '</li>');
+                $menu.append('<li>' + recipe + '</li>');
             });
+            printMenu();
         }
         // printToMenu();
+
+}
+//-------------printing menu with print button---------------
+function printMenu(){
+    $('body').on('click', '#menu', function(){
+        window.print();
+        return false;
+    });
+    $('body').on('click', "a[href='#print']", function() {
+        window.print();
+        return false;
+    });
 
 }
 
