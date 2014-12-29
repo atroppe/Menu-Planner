@@ -2,7 +2,7 @@
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    -webkit-transition: all .1s ease;
+    transition: all .1s ease;
 }
 /**--------- GRIDS ------------**/
 
@@ -37,16 +37,16 @@ body {
     background-attachment: fixed;
 }
 .chalkboard {
-    background-image: url(http://cl.ly/image/213N0k0e330D/chalkboard_drawings.gif);
+    background-image: url('../images/chalkboard_drawings.gif');
 }
 .goldFabric {
-    background-image: url(http://cl.ly/image/3x2D413Y0m1W/gold-fabric-texture.jpg);
+    background-image: url('../images/gold-fabric-texture.jpg');
 }
 .picnic {
-    background-image: url(http://cl.ly/image/1C2F3d0w121W/red_and_white_tablecloth_pattern_picture.jpg);
+    background-image: url('../images/red_and_white_tablecloth_pattern_picture.jpg');
 }
 .wood {
-    background-image: url(http://cl.ly/image/2x0e2z3W452U/01.jpg);
+    background-image: url('../images/wood-bkd.jpg');
 }
 /*------------------Monster Nav!!!-------------*/
 
@@ -196,7 +196,7 @@ header {
 
 #pageContent {
     max-width: 1000px;
-    padding-top: 139px;
+    padding: 139px 0px;
     margin: 0 auto;
 }
 .hide {
@@ -320,6 +320,33 @@ ul.menuTextArea {
     text-align: center;
     margin-top: 3rem;
     cursor: pointer;
+}
+.added {
+    position: relative;
+    transition: all 0.5s ease;
+}
+.added:before {
+    content: '';
+    background-color: hsla(360, 100%, 100%, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+}
+.add-msg {
+    display: none;
+}
+.added .add-msg {
+    display: block;
+    color: black;
+    font-family: 'Homemade Apple', cursive;
+    position: absolute;
+    top: 2em;
+    left: .5em;
+    transform: rotate(-25deg);
+    font-size: 2em;
 }
 .cards p, li {
     font-family: 'Special Elite', serif;
