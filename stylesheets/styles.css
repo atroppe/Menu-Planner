@@ -26,7 +26,7 @@
 /*-----------------------background---------------------*/
 
 body {
-    min-width: 400px;
+    min-width: 300px;
 }
 #bkdImg {
     width: 100%;
@@ -164,19 +164,12 @@ header {
     height: 100%;
 }
 #mainTitle {
-    /*    text-align: center;
-    font-size: 3rem;
-    padding: .5rem;
-    position: relative;
-        top: 50%;
-    -webkit-transform: translateY(-50%);
-    font-family: 'Dancing Script', cursive;*/
-    
     background-image: url("../images/menu-logo.png");
     width: 269px;
     height: 105px;
     background-size: 100% auto;
     background-repeat: no-repeat;
+    background-position: center; 
     margin: 0 auto;
     display: inline-block;
 }
@@ -228,19 +221,6 @@ header {
     
     margin: 3rem auto;
 }
-.themes a {
-    font-size: 1.25rem;
-    color: white;
-    font-family: 'Special Elite', serif;
-    padding: 3rem;
-    display: inline-block;
-    background-color: black;
-    /*    border-radius: 50%*/
-}
-.themes a:hover {
-    transform: scale(1.25);
-    cursor: pointer;
-}
 .theme h4 {
     color: black;
     font-family: 'Special Elite', serif;
@@ -273,6 +253,23 @@ a#right:hover, a#right:active {
     width: 25%;
     text-align: center;
     margin-bottom: 10%;
+}
+.badge a {
+    font-size: 1.25rem;
+    color: white;
+    font-family: 'Special Elite', serif;
+    padding: 1rem;
+    display: inline-block;
+    /*    background-color: black;*/
+    /*    border-radius: 50%*/
+}
+.badge a:hover {
+    transition: all .3s ease;
+    transform: scale(1.15);
+    cursor: pointer;
+}
+.badge img {
+    max-width: 100%;
 }
 /*----------------final Menu Page------------------*/
 
@@ -398,10 +395,23 @@ ul.menuTextArea {
 }*/
 /****************MEDIA QUERIES***********************/
 
-@media (max-width: 599px) {
+@media (max-width: 450px) {
+    .badge {
+        width: 80%;
+    }
+    .themes {
+        text-align: center;
+    }
+    #menu {
+        min-width: 0px;
+    }
+}
+@media (min-width: 400px) and (max-width: 700px) {
     .badge {
         width: 50%;
     }
+}
+@media (max-width: 599px) {
     .triangleNav {
         transform: translate(0, 50px) rotate(0deg);
         width: 100%;
@@ -410,8 +420,8 @@ ul.menuTextArea {
         display: none;
     }
     .tab {
-        font-size: .6rem;
-        padding: 2px;
+        font-size: .75rem;
+        padding: 5px;
     }
     #leftTab {
         border-left: 7px solid white;

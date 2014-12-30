@@ -200,10 +200,9 @@ function app() {
     }
     //-------------printing menu with print button---------------
 function printMenu() {
-    // $('body').on('click', '#menu', function() {
-    //     window.print();
-    //     // return false;
-    // });
+    $('body').on('click', '#menu', function() {
+        window.print();
+    });
     $('body').on('click', "a[href='#print']", function() {
         window.print();
         // return false;
